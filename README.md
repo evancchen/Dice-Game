@@ -1,1 +1,1 @@
-# background-generator
+# Dice Game
