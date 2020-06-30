@@ -6,11 +6,11 @@ GAME RULES:
 - BUT, if the player rolls a 1, all his ROUND score gets lost. After that, it's the next player's turn
 - The player can choose to 'Hold', which means that his ROUND score gets added to his GLBAL score. After that, it's the next player's turn
 - The first player to reach 100 points on GLOBAL score wins the game
-
+- This is to play
 */
 var scores, roundScore, activePlayer, gamePlaying, lastDice, dice, signal, winScore, dice1;
 init();
-document.querySelector('.btn-roll').addEventListener('click', function() {    
+document.querySelector('.btn-roll').addEventListener('click', function() {
     if (gamePlaying) {
         if (signal === undefined || signal == false) {
             lastDice = dice;
@@ -36,7 +36,7 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
                 //Add score
                 roundScore += dice;
                 roundScore += dice1;
-                document.querySelector('#current-' + activePlayer).textContent = roundScore;        
+                document.querySelector('#current-' + activePlayer).textContent = roundScore;
             } else if (dice === 1 || dice1 === 1){
                 //Next player
                 document.getElementById('current-' + activePlayer).textContent = 0;
@@ -62,7 +62,7 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
         }
     }
 });
-document.querySelector('.btn-hold').addEventListener('click', function() {    
+document.querySelector('.btn-hold').addEventListener('click', function() {
     scores[activePlayer] += roundScore;
     document.getElementById('score-' + activePlayer).textContent = scores[activePlayer];
     document.getElementById('current-' + activePlayer).textContent = 0;
@@ -77,7 +77,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
         roundScore = 0;
     } else if (gamePlaying){
         activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
-        document.querySelector('.player-' + activePlayer + '-panel').classList.add('active');    
+        document.querySelector('.player-' + activePlayer + '-panel').classList.add('active');
         roundScore = 0;
         signal = true;
     }
