@@ -2,6 +2,14 @@
 *** GENERAL
 **********************************************/
 
+h1 {
+    text-align: center;
+}
+
+.middle {
+    text-align: center;
+}
+
 * {
     margin: 0;
     padding: 0;
